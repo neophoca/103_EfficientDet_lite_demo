@@ -97,22 +97,20 @@ LABELS = [
     'toothbrush'
 ]
 
-def structure_print():
-    print('')
-    print(f'model: {os.path.basename(model_tflite)}')
-    print('')
-    print('==INPUT============================================')
-    pprint.pprint(interpreter.get_input_details())
-    print('')
-    print('==OUTPUT===========================================')
-    pprint.pprint(interpreter.get_output_details())
+#def structure_print(interpreter):
+#    print('')
+#    print(f'model: {os.path.basename(model_tflite)}')
+#    print('')
+#    print('==INPUT============================================')
+#    pprint.pprint(interpreter.get_input_details())
+#    print('')
+#    print('==OUTPUT===========================================')
+#    pprint.pprint(interpreter.get_output_details())
 
 
 def main():
     interpreter = tf.lite.Interpreter(model_tflite, num_threads=4)
     interpreter.allocate_tensors()
-    structure_print()
-
 
     img = Image.open("dog.jpg")
     w, h = img.size
@@ -153,6 +151,10 @@ def main():
         draw.text((box[1] * size, box[0] * size - text_height), label)
 
     img.save('dog_result_tflite.jpg')
+
+    # Display the image on the screen
+    #image = Image.open("dog_result_tflite.jpg")
+    #image.show()
 
 if __name__ == "__main__":
     main()
