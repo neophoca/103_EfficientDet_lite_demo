@@ -8,5 +8,10 @@ This is a simple object detection demo that uses Tensorflow Lite. It takes an im
 - Run the script with python demo.py
 The script will create an output image with the same name as the input image but with "_result_tflite" appended to it.
 
+## Displaying an Image
+
+If you want to display an image on the screen, uncomment `show()` method in demo.py. However, if you are running this code in a headless environment, this method will not work.
 
 
+
+To install this package from GitHub, you can use the following command: pip3 install git+https://github.com/neophoca/103_EfficientDet_lite_demo.git
