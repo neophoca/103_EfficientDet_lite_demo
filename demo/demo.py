@@ -5,6 +5,7 @@ import pprint
 import numpy as np
 from PIL import Image
 from PIL import Image, ImageDraw
+import pkg_resources
 #import tflite_runtime.interpreter as tflite
 
 os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
@@ -107,12 +108,22 @@ LABELS = [
 #    print('==OUTPUT===========================================')
 #    pprint.pprint(interpreter.get_output_details())
 
+def get_image(file_path):
+    if pkg_resources.resource_exists(__name__, file_path):
+        with pkg_resources.resource_stream(__name__, file_path) as image_file:
+            image = Image.open(image_file)
+            image.load() #hmm 
+    return image
 
 def main():
-    interpreter = tf.lite.Interpreter(model_tflite, num_threads=4)
+    with pkg_resources.resource_stream(__name__, model_tflite) as model_file:
+        interpreter = tf.lite.Interpreter(model_content=model_file.read(), num_threads=4)
+
+    #interpreter = tf.lite.Interpreter(model_tflite, num_threads=4)
     interpreter.allocate_tensors()
 
-    img = Image.open("dog.jpg")
+
+    img = get_image('dog.jpg') ##
     w, h = img.size
     img = img.resize((size, size))
     frame = np.array(img)
