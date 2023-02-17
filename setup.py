@@ -9,6 +9,9 @@ setup(
             'demo=demo.demo:main',
         ],
     },
+    package_data={
+        "demo": ["models/*", "dog.jpg"]
+    },
     description="tfLITE",
     include_package_data=True,
     install_requires=open("requirements.txt").readlines()
