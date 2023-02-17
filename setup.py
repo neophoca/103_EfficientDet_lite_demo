@@ -10,6 +10,7 @@ setup(
         ],
     },
     description="tfLITE",
+    include_package_data=True,
     install_requires=open("requirements.txt").readlines()
 )
 
