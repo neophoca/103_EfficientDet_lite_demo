@@ -5,6 +5,7 @@ setup.py
 demo/__init__.py
 demo/demo.py
 demo/dog.jpg
+demo/model.py
 demo.egg-info/PKG-INFO
 demo.egg-info/SOURCES.txt
 demo.egg-info/dependency_links.txt

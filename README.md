@@ -2,7 +2,7 @@
 This is a simple object detection demo that uses Tensorflow Lite. It takes an image as input and detects objects in it, drawing bounding boxes around them and labeling each object.
 
 ## Usage
-- Create a virtual environment 
+- Create a virtual environment
 
 ## Build a package
 - python3 -m build
