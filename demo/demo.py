@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import numpy as np
 from PIL import ImageDraw
-from .model import inference, get_image, get_size, LABELS
+from demo.model import inference, get_image, get_size, LABELS
 
 
 def main():

@@ -9,5 +9,5 @@ RUN pip install --upgrade setuptools
 RUN pip install .
 
 EXPOSE 8501
-
-CMD ["streamlit", "run", "demo/app.py", "--server.enableCORS=false"]
+CMD ["python", "demo", "--server.enableCORS=false"]
+#CMD ["streamlit", "run", "demo/app.py", "--server.enableCORS=false"]
