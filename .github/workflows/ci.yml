@@ -14,6 +14,7 @@ jobs:
       - name: Install Docker
         run: |
           sudo apt-get update
+          sudo apt-get remove docker docker-engine docker.io containerd runc
           sudo apt-get remove containerd.io
           sudo apt install docker.io docker-compose -y
           systemctl start docker
