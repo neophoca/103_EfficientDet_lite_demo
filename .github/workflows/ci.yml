@@ -11,33 +11,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up Python 3.9
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
-
-      - name: Install dependencies
+      - name: Install Docker
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install .
+          sudo apt-get update
+          sudo apt-get install docker.io -y
 
-      - name: Lint with flake8
+      - name: Build Docker image
         run: |
-          pip install flake8
-          flake8 .
+          docker build -t demotest .
+        working-directory: .
 
-      - name: Test with pytest
+      - name: Test with Docker
         run: |
-          pip install pytest
-          pytest -v
-
-      - name: Check code formatting with black
-        run: |
-          pip install black
-          black --check --diff .
-
-      - name: Check code style with isort
-        run: |
-          pip install isort
-          isort --check-only --diff .
+          docker run --rm -it demotest
+        working-directory: .
