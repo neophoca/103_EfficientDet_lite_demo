@@ -13,7 +13,7 @@ cfgv==3.3.1
 charset-normalizer==3.0.1
 click==8.1.3
 decorator==5.1.1
--e git+https://github.com/neophoca/103_EfficientDet_lite_demo.git@1308d995148c57b78d56274783b18ae1e430ab11#egg=demo
+//demo @ git+https://github.com/neophoca/103_EfficientDet_lite_demo.git@1308d995148c57b78d56274783b18ae1e430ab11#egg=demo
 dill==0.3.6
 distlib==0.3.6
 entrypoints==0.4
