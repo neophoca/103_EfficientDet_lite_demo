@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+import os
+import sys
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.dirname(SCRIPT_DIR))
 import numpy as np
 from PIL import ImageDraw
 from demo.model import inference, get_image, get_size, LABELS
