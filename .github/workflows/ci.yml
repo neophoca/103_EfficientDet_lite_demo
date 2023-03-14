@@ -36,5 +36,5 @@ jobs:
 
       - name: Test with Docker
         run: |
-          docker run --rm -it demotest
+          docker run --rm demotest
         working-directory: .
