@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+"""
+This module provides an object detection model for detecting objects in images using TensorFlow Lite.
+
+The module provides a function called 'inference' that takes an image as input and returns the bounding
+boxes, class IDs, and confidence scores for the detected objects in the image.
+"""
 import os
 import tensorflow as tf
 import numpy as np
@@ -6,14 +12,17 @@ from PIL import Image
 import pkg_resources
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-model_choice = 3
-model_tflite = "models/model_float32.tflite" + str(model_choice)
+MODEL_CHOICE = 3
+MODEL_TFLITE = "models/model_float32.tflite" + str(MODEL_CHOICE)
 
-size = [320, 384, 448, 512, 640][model_choice]
+SIZE = [320, 384, 448, 512, 640][MODEL_CHOICE]
 
 
 def get_size():
-    return size
+    """
+    Returns the input size of the model.
+    """
+    return SIZE
 
 
 LABELS = [
@@ -101,6 +110,12 @@ LABELS = [
 
 
 def get_image(file_path):
+    """
+    Loads an image from a file path and returns it as a PIL Image object.
+
+    :param file_path: The path to the image file.
+    :return: A PIL Image object.
+    """
     if pkg_resources.resource_exists(__name__, file_path):
         with pkg_resources.resource_stream(__name__, file_path) as image_file:
             image = Image.open(image_file)
@@ -109,14 +124,23 @@ def get_image(file_path):
 
 
 def inference(img):
-    with pkg_resources.resource_stream(__name__, model_tflite) as model_file:
+    """
+    Runs object detection on an input image using the TensorFlow Lite model.
+
+    :param img: A PIL Image object representing the input image.
+    :return: A tuple containing three arrays:
+        - An array of bounding boxes, where each box is represented as [ymin, xmin, ymax, xmax]
+        - An array of class IDs, where each ID is an integer representing the object class
+        - An array of confidence scores, where each score is a float between 0 and 1 representing the confidence in the
+          detection
+    """
+    with pkg_resources.resource_stream(__name__, MODEL_TFLITE) as model_file:
         interpreter = tf.lite.Interpreter(
             model_content=model_file.read(), num_threads=4
         )
 
     interpreter.allocate_tensors()
 
-    w, h = img.size
     img = img.resize((size, size))
     frame = np.array(img)
     frame = frame.reshape((1, size, size, 3))

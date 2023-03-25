@@ -1,3 +1,8 @@
+"""
+Setup script for demo.
+
+This script installs the demo package and its dependencies.
+"""
 from setuptools import setup, find_packages
 
 setup(
@@ -12,5 +17,5 @@ setup(
     package_data={"demo": ["models/*", "dog.jpg", "model.py"]},
     description="tfLITE",
     include_package_data=True,
-    install_requires=open("requirements.txt").readlines(),
+    install_requires=open("requirements.txt", 'r', encoding='utf-8').readlines(),
 )

@@ -1,10 +1,19 @@
-import unittest
-from demo import model
-import numpy as np
+"""Module containing an object detection model using the EfficientDet architecture.
 
+"""
+import unittest
+import numpy as np
+from demo import model
 
 class TestEfficientDet(unittest.TestCase):
+    """Test case for the EfficientDet object detection model."""
+
     def test_inference(self):
+        """Test the `inference` function of the EfficientDet model.
+
+        This test case checks that the `inference` function returns the correct output shapes and predicted class IDs
+        for an example input image of a dog. 
+        """
         ci_true = np.array(
             [
                 [
