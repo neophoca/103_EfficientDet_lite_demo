@@ -8,7 +8,6 @@ boxes, class IDs, and confidence scores for the detected objects in the image.
 import os
 import tensorflow as tf
 import numpy as np
-from PIL import Image
 import pkg_resources
 
 
@@ -108,6 +107,7 @@ LABELS = [
     "hair drier",
     "toothbrush",
 ]
+
 
 def inference(img):
     """

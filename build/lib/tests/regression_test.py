@@ -6,7 +6,7 @@ import numpy as np
 import sys
 sys.path.append('../demo')
 from demo.models.model import inference
-from demo import get_image
+from demo.demo import get_image
 
 
 class TestEfficientDet(unittest.TestCase):
@@ -49,7 +49,7 @@ class TestEfficientDet(unittest.TestCase):
                 ]
             ]
         )
-        img = get_image("dog.jpg")
+        img = get_image()
         bboxes, class_ids, confs = inference(img)
         self.assertEqual(bboxes.shape, (1, 25, 4))
         self.assertEqual(class_ids.shape, (1, 25))
