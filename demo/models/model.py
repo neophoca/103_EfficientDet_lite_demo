@@ -114,7 +114,7 @@ def get_image(file_path):
     """
     Loads an image from a file path and returns it as a PIL Image object.
 
-    :param file_path: The path to the image file.
+    :param file_path: The pat       h to the image file.
     :return: A PIL Image object.
     """
     image = None
