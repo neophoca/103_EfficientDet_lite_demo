@@ -19,7 +19,7 @@ class TestEfficientDet(unittest.TestCase):
         for an example input image of a dog. 
         """
         ci_true = np.array(
-            [[ 2, 17,  1,  7,  0,  1,  0, 14,  2,  2,  2,  0, 63,  0, 14,  0,  0,  2,  2,  2,  2,  1, 63, 1463]]
+            [[2, 17, 1, 7, 0, 1, 0, 14, 2, 2, 2, 0, 63, 0, 14, 0, 0, 2, 2, 2, 2, 1, 63, 14, 63]]
         )
         img = get_image()
         bboxes, class_ids, confs = inference(img)
