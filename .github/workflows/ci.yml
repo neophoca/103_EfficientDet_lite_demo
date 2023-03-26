@@ -43,7 +43,7 @@ jobs:
         run: docker run demotest pytest -v
 
       - name: Check code formatting with black
-        run: docker run demotest black --check-only --diff .
+        run: docker run demotest black --check --diff .
 
       - name: Check code style with isort
         run: docker run demotest isort --check-only --diff .
