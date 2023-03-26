@@ -2,6 +2,7 @@
 """
 import sys
 import unittest
+
 import numpy as np
 
 sys.path.append("../demo")
