@@ -5,15 +5,9 @@ Module for object detection using the EfficientDet model.
 This module exports the following functions:
     - main(): draws bounding boxes around objects in an image using the EfficientDet lite object detection model
 """
-import os
-import sys
-
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(os.path.dirname(SCRIPT_DIR))
-
 import numpy as np
 from PIL import ImageDraw
-from demo.model import inference, get_image, get_size, LABELS
+from .model import inference, get_image, get_size, LABELS
 
 
 def main():
