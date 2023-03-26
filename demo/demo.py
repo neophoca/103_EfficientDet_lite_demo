@@ -58,5 +58,6 @@ def get_image(file_path="dog.jpg"):
             image.load()
     return image
 
+
 if __name__ == "__main__":
     main()
