@@ -141,9 +141,9 @@ def inference(img):
 
     interpreter.allocate_tensors()
 
-    img = img.resize((size, size))
+    img = img.resize((SIZE, SIZE))
     frame = np.array(img)
-    frame = frame.reshape((1, size, size, 3))
+    frame = frame.reshape((1, SIZE, SIZE, 3))
 
     input_index = interpreter.get_input_details()[0]["index"]
     interpreter.set_tensor(input_index, frame.astype(np.float32))

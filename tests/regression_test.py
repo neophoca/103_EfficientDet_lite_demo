@@ -5,6 +5,7 @@ import unittest
 import numpy as np
 from demo import model
 
+
 class TestEfficientDet(unittest.TestCase):
     """Test case for the EfficientDet object detection model."""
 
