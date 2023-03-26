@@ -7,6 +7,7 @@ import sys
 sys.path.append('../demo')
 from demo.models.model import get_image, inference
 
+
 class TestEfficientDet(unittest.TestCase):
     """Test case for the EfficientDet object detection model."""
 

@@ -117,7 +117,7 @@ def get_image(file_path):
     :param file_path: The path to the image file.
     :return: A PIL Image object.
     """
-    image=None
+    image = None
     if pkg_resources.resource_exists(__name__, file_path):
         with pkg_resources.resource_stream(__name__, file_path) as image_file:
             image = Image.open(image_file)
