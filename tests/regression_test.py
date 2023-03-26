@@ -3,8 +3,9 @@
 """
 import unittest
 import numpy as np
-from demo import model
-
+import sys
+sys.path.append('../demo')
+from demo.models.model import get_image, inference
 
 class TestEfficientDet(unittest.TestCase):
     """Test case for the EfficientDet object detection model."""
@@ -46,8 +47,8 @@ class TestEfficientDet(unittest.TestCase):
                 ]
             ]
         )
-        img = model.get_image("dog.jpg")
-        bboxes, class_ids, confs = model.inference(img)
+        img = get_image("dog.jpg")
+        bboxes, class_ids, confs = inference(img)
         self.assertEqual(bboxes.shape, (1, 25, 4))
         self.assertEqual(class_ids.shape, (1, 25))
         self.assertEqual(confs.shape, (1, 25))
