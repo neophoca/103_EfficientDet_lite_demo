@@ -18,7 +18,7 @@ def main():
     Returns:
         None
     """
-    img = get_image("../dog.jpg")
+    img = get_image("dog.jpg")
     size = get_size()
     bboxes, class_ids, _ = inference(img)
     draw = ImageDraw.Draw(img)
