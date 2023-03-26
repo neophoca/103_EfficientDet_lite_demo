@@ -8,7 +8,7 @@ RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install --upgrade setuptools
 RUN pip install .
-RUN pip install flake8 pytest black isort
+RUN pip install flake8 pytest black==19.10b0 isort
 
 EXPOSE 8501
 CMD ["python", "demo/demo.py", "--server.enableCORS=false"]
