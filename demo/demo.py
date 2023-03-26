@@ -23,7 +23,9 @@ def main():
     st.set_page_config(page_title="Demo")
     st.title("Demo")
 
-    uploaded_file = st.file_uploader("Choose an image file", type=["jpg", "jpeg", "png"])
+    uploaded_file = st.file_uploader(
+        "Choose an image file", type=["jpg", "jpeg", "png"]
+        )
 
     if uploaded_file is not None:
         img = Image.open(uploaded_file)
