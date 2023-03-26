@@ -12,7 +12,6 @@ import pkg_resources
 import tensorflow as tf
 
 
-
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 MODEL_CHOICE = 0
 MODEL_TFLITE = "model_float32.5"
