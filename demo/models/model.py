@@ -14,7 +14,7 @@ import pkg_resources
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 MODEL_CHOICE = 1
-MODEL_TFLITE = "model_float32.tflite" + str(MODEL_CHOICE)
+MODEL_TFLITE = "model_float32.5"
 
 SIZE = [320, 384, 448, 512, 640][MODEL_CHOICE]
 
