@@ -52,7 +52,7 @@ def main():
         draw.text((box[1] * size, box[0] * size - text_height), label)
 
     img.save("dog_result_tflite.jpg")
-
+    print(class_ids)
     #
     # Display the image on the screen
     # image = Image.open("dog_result_tflite.jpg")
