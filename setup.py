@@ -17,5 +17,5 @@ setup(
     package_data={"demo": ["models/*", "dog.jpg"]},
     description="tfLITE",
     include_package_data=True,
-    install_requires=open("requirements.txt", 'r', encoding='utf-8').readlines(),
+    install_requires=open("requirements.txt", "r", encoding="utf-8").readlines(),
 )

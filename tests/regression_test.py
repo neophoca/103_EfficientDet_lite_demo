@@ -4,7 +4,8 @@
 import unittest
 import numpy as np
 import sys
-sys.path.append('../demo')
+
+sys.path.append("../demo")
 from demo.models.model import inference
 from demo.demo import get_image
 
@@ -18,9 +19,39 @@ class TestEfficientDet(unittest.TestCase):
         This test case checks that the `inference` function returns the correct output shapes and predicted class IDs
         for an example input image of a dog. 
         """
+
         ci_true = np.array(
-            [[2, 17, 1, 7, 0, 1, 0, 14, 2, 2, 2, 0, 63, 0, 14, 0, 0, 2, 2, 2, 2, 1, 63, 14, 63]]
+            [
+                [
+                    2,
+                    17,
+                    1,
+                    7,
+                    0,
+                    1,
+                    0,
+                    14,
+                    2,
+                    2,
+                    2,
+                    0,
+                    63,
+                    0,
+                    14,
+                    0,
+                    0,
+                    2,
+                    2,
+                    2,
+                    2,
+                    1,
+                    63,
+                    14,
+                    63,
+                ]
+            ]
         )
+        
         img = get_image()
         bboxes, class_ids, confs = inference(img)
         self.assertEqual(bboxes.shape, (1, 25, 4))
