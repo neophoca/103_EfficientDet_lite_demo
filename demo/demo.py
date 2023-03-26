@@ -10,6 +10,7 @@ import pkg_resources
 from PIL import ImageDraw, Image
 from demo.models.model import inference, get_size, LABELS
 
+
 def get_image(file_path):
     """
     Loads an image from a file path and returns it as a PIL Image object.
@@ -23,6 +24,7 @@ def get_image(file_path):
             image = Image.open(image_file)
             image.load()
     return image
+
 
 def main():
     """
