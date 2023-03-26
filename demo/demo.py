@@ -25,7 +25,7 @@ def main():
 
     uploaded_file = st.file_uploader(
         "Choose an image file", type=["jpg", "jpeg", "png"]
-        )
+    )
 
     if uploaded_file is not None:
         img = Image.open(uploaded_file)
