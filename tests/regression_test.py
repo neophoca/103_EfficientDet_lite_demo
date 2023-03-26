@@ -14,9 +14,7 @@ class TestEfficientDet(unittest.TestCase):
     """Test case for the EfficientDet object detection model."""
 
     def test_inference(self):
-        """Test the `inference` function of the EfficientDet model.
-        This test case checks that the `inference` function returns the correct output shapes and predicted class IDs for an example input image of a dog. 
-        """
+        """Test the `inference` function of the EfficientDet."""
 
         ci_true = np.array(
             [
