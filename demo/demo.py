@@ -7,8 +7,9 @@ This module exports the following functions:
 """
 import numpy as np
 import pkg_resources
-from PIL import ImageDraw, Image
-from demo.models.model import inference, get_size, LABELS
+from PIL import Image, ImageDraw
+
+from demo.models.model import LABELS, get_size, inference
 
 
 def get_image(file_path="dog.jpg"):

@@ -6,9 +6,11 @@ The module provides a function called 'inference' that takes an image as input a
 boxes, class IDs, and confidence scores for the detected objects in the image.
 """
 import os
-import tensorflow as tf
+
 import numpy as np
 import pkg_resources
+import tensorflow as tf
+
 
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"

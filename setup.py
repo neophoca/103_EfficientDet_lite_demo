@@ -3,7 +3,7 @@ Setup script for demo.
 
 This script installs the demo package and its dependencies.
 """
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 setup(
     name="demo",

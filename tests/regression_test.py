@@ -1,13 +1,12 @@
 """Module containing an object detection model using the EfficientDet architecture.
-
 """
+import sys
 import unittest
 import numpy as np
-import sys
 
 sys.path.append("../demo")
-from demo.models.model import inference
 from demo.demo import get_image
+from demo.models.model import inference
 
 
 class TestEfficientDet(unittest.TestCase):
