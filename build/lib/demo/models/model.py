@@ -13,8 +13,8 @@ import pkg_resources
 
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-MODEL_CHOICE = 3
-MODEL_TFLITE = "model_float32.tflite" + str(MODEL_CHOICE)
+MODEL_CHOICE = 0
+MODEL_TFLITE = "model_float32.5"
 
 SIZE = [320, 384, 448, 512, 640][MODEL_CHOICE]
 
@@ -108,22 +108,6 @@ LABELS = [
     "hair drier",
     "toothbrush",
 ]
-
-
-def get_image(file_path):
-    """
-    Loads an image from a file path and returns it as a PIL Image object.
-
-    :param file_path: The path to the image file.
-    :return: A PIL Image object.
-    """
-    image=None
-    if pkg_resources.resource_exists(__name__, file_path):
-        with pkg_resources.resource_stream(__name__, file_path) as image_file:
-            image = Image.open(image_file)
-            image.load()
-    return image
-
 
 def inference(img):
     """

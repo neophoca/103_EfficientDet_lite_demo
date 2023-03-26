@@ -6,9 +6,23 @@ This module exports the following functions:
     - main(): draws bounding boxes around objects in an image using the EfficientDet lite object detection model
 """
 import numpy as np
-from PIL import ImageDraw
-from demo.models.model import get_image, inference, get_size, LABELS
+import pkg_resources
+from PIL import ImageDraw, Image
+from demo.models.model import inference, get_size, LABELS
 
+def get_image(file_path):
+    """
+    Loads an image from a file path and returns it as a PIL Image object.
+
+    :param file_path: The pat       h to the image file.
+    :return: A PIL Image object.
+    """
+    image = None
+    if pkg_resources.resource_exists(__name__, file_path):
+        with pkg_resources.resource_stream(__name__, file_path) as image_file:
+            image = Image.open(image_file)
+            image.load()
+    return image
 
 def main():
     """
@@ -16,6 +30,7 @@ def main():
 
     This function loads an image from the file "dog.jpg", performs object detection, and draws bounding boxes around the detected objects in the image.
     Returns:
+
         None
     """
     img = get_image("dog.jpg")

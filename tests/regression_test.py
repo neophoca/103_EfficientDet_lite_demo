@@ -5,7 +5,8 @@ import unittest
 import numpy as np
 import sys
 sys.path.append('../demo')
-from demo.models.model import get_image, inference
+from demo.models.model import inference
+from demo import get_image
 
 
 class TestEfficientDet(unittest.TestCase):
