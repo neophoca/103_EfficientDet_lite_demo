@@ -37,7 +37,7 @@ jobs:
         working-directory: .
 
       - name: Lint with flake8
-        run: docker run demotest flake8 --ignore=E231, E501, F841, E402, W291, W293, W503 .
+        run: docker run demotest flake8 --ignore=E231,E501,F841,E402,W291,W293,W503 .
 
       - name: Test with pytest
         run: docker run demotest pytest -v
