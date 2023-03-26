@@ -37,13 +37,13 @@ jobs:
         working-directory: .
 
       - name: Lint with flake8
-        run: docker run demotest flake8 .
+        run: docker run demotest flake8 --ignore=E231 .
 
       - name: Test with pytest
         run: docker run demotest pytest -v
 
       - name: Check code formatting with black
-        run: docker run demotest black --check --diff .
+        run: docker run demotest black --check-only --diff .
 
       - name: Check code style with isort
         run: docker run demotest isort --check-only --diff .

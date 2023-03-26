@@ -11,8 +11,8 @@ This module exports the following functions:
 __all__ = ["main"]
 
 import numpy as np
-import streamlit as st
 import pkg_resources
+import streamlit as st
 from PIL import Image, ImageDraw
 
 from demo.models.model import LABELS, get_size, inference
