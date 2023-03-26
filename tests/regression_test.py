@@ -16,8 +16,7 @@ class TestEfficientDet(unittest.TestCase):
     def test_inference(self):
         """Test the `inference` function of the EfficientDet model.
 
-        This test case checks that the `inference` function returns the correct output shapes and predicted class IDs
-        for an example input image of a dog. 
+        This test case checks that the `inference` function returns the correct output shapes and predicted class IDs for an example input image of a dog. 
         """
 
         ci_true = np.array(
@@ -51,7 +50,7 @@ class TestEfficientDet(unittest.TestCase):
                 ]
             ]
         )
-        
+
         img = get_image()
         bboxes, class_ids, confs = inference(img)
         self.assertEqual(bboxes.shape, (1, 25, 4))
