@@ -13,14 +13,14 @@ __all__ = ["main"]
 import numpy as np
 import pkg_resources
 import streamlit as st
+
 from PIL import Image, ImageDraw
 
-from demo.models.model import LABELS, get_size, inference
+from models.model import LABELS, get_size, inference
 
 
 def main():
     """Main function"""
-    st.set_page_config(page_title="Demo")
     st.title("Demo")
 
     uploaded_file = st.file_uploader(
@@ -30,7 +30,7 @@ def main():
     if uploaded_file is not None:
         img = Image.open(uploaded_file)
         size = get_size()
-        bboxes, class_ids, confs = inference(np.array(img))
+        bboxes, class_ids, confs = inference(img)
         draw = ImageDraw.Draw(img)
         for i, box in enumerate(bboxes[0]):
             draw.rectangle(
