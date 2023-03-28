@@ -4,7 +4,8 @@
 import unittest
 import numpy as np
 import sys
-sys.path.append('../demo')
+
+sys.path.append("../demo")
 from demo.models.model import inference
 from demo.demo import get_image
 
@@ -16,7 +17,7 @@ class TestEfficientDet(unittest.TestCase):
         """Test the `inference` function of the EfficientDet model.
 
         This test case checks that the `inference` function returns the correct output shapes and predicted class IDs
-        for an example input image of a dog. 
+        for an example input image of a dog.
         """
         ci_true = np.array(
             [

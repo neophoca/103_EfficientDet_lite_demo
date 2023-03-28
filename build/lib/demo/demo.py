@@ -33,7 +33,9 @@ def main():
     st.set_page_config(page_title="Demo")
     st.title("Demo")
 
-    uploaded_file = st.file_uploader("Choose an image file", type=["jpg", "jpeg", "png"])
+    uploaded_file = st.file_uploader(
+        "Choose an image file", type=["jpg", "jpeg", "png"]
+    )
 
     if uploaded_file is not None:
         img = Image.open(uploaded_file)
@@ -67,6 +69,7 @@ def get_image(file_path="dog.jpg"):
             image = Image.open(image_file)
             image.load()
     return image
+
 
 if __name__ == "__main__":
     main()
