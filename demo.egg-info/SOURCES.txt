@@ -3,6 +3,7 @@ README.md
 requirements.txt
 setup.py
 demo/__init__.py
+demo/app.py
 demo/demo.py
 demo/dog.jpg
 demo.egg-info/PKG-INFO
