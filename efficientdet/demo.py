@@ -9,7 +9,7 @@ import numpy as np
 import pkg_resources
 from PIL import Image, ImageDraw
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     from models.model import LABELS, get_size, inference
 else:
     from .models.model import LABELS, get_size, inference
