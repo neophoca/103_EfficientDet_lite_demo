@@ -2,4 +2,4 @@
 max-line-length = 88
 extend-ignore = E203, W503
 exclude = .git,__pycache__,build,dist,.gitignore,demoenv
-ignore = E501, F841, E402, W291, W293, W503
+ignore = E501, F841, E402, W291, W293, W503, E401

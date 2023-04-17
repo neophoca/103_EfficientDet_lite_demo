@@ -14,9 +14,8 @@ import numpy as np
 import pkg_resources
 import streamlit as st
 
-from PIL import Image, ImageDraw
-
 from models.model import LABELS, get_size, inference
+from PIL import Image, ImageDraw
 
 
 def main():
