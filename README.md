@@ -20,23 +20,23 @@ This demo utilizes the TensorFlow Lite version of EfficientDet to perform object
 
 Clone this repository:
 
-\```bash
+```bash
 git clone --branch week3 https://github.com/neophoca/103_EfficientDet_lite_demo.git
-\```
+```
 
 Install the `build` package and create a wheel file:
 
-\```bash
+```bash
 python -m pip install build
 python3 -m build .
 pip install dist/efficientdet-0.1.0-py3-none-any.whl
-\```
+```
 
 Activate the demo by running:
 
-\```bash
+```bash
 demo
-\```
+```
 
 ## Running the Demo
 
@@ -44,9 +44,9 @@ Create and activate a virtual environment.
 
 Install the requirements and run the `demo.py` script:
 
-\```bash
+```bash
 python demo/demo.py
-\```
+```
 
 This command will execute the `demo.py` script with a sample image and save the result image to the same directory.
 
@@ -54,31 +54,31 @@ This command will execute the `demo.py` script with a sample image and save the 
 
 To run the unit tests, execute the following command:
 
-\```bash
+```bash
 pytest .
-\```
+```
 
 ## Pre-commit Checks
 
 To run pre-commit checks, first install `pre-commit`:
 
-\```bash
+```bash
 pip install pre-commit
-\```
+```
 
 Then, run the following command:
 
-\```bash
+```bash
 pre-commit run --all-files
-\```
+```
 
 ## Alternative Installation Methods
 
 To install the package directly from the GitHub repository:
 
-\```bash
+```bash
 pip install git+https://github.com/neo/103_EfficientDet_lite_demo.git
-\```
+```
 
 To start the demo, use the command `demo`.
 
@@ -86,9 +86,9 @@ To start the demo, use the command `demo`.
 
 To build the Docker image:
 
-\```bash
+```bash
 docker build -t object-detection-demo .
-\```
+```
 
 
 The object detection model is integrated with Streamlit and can be accessed at `localhost:` in your web browser.
