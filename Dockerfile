@@ -11,5 +11,5 @@ RUN pip install .
 RUN pip install flake8 pytest black isort
 
 EXPOSE 8501
-CMD ["python", "demo/app.py", "--server.enableCORS=false"]
-#CMD ["streamlit", "run", "demo/app.py", "--server.enableCORS=false"]
+#CMD ["python", "demo/app.py", "--server.enableCORS=false"]
+CMD ["streamlit", "run", "demo/app.py", "--server.enableCORS=false"]
