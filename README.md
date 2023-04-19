@@ -1,20 +1,94 @@
-# Object Detection with EfficientDet TFLite
-This is a simple object detection demo that uses Tensorflow Lite. It takes an image as input and detects objects in it, drawing bounding boxes around them and labeling each object.
+# EfficientDet Lite for Object Detection
 
-## Usage
-- Create a virtual environment
+This repository demonstrates a simple object detection application using the EfficientDet Lite model with TensorFlow Lite. The application takes an image as input, detects objects within it, and draws bounding boxes and labels around each object.
 
-## Build a package
-- python3 -m build
+## Table of Contents
 
-## Run python project
-- Install the packages listed in the requirements.txt file: pip install -r requirements.txt
-- Pick the model version in model_choice = 3 (1 - 4).
-- Run the script with python demo/demo.py
-The script will create an output image with the same name as the input image but with "_result_tflite" appended to it.
+1. [Overview](#overview)
+2. [Setup and Installation](#setup-and-installation)
+3. [Running the Demo](#running-the-demo)
+4. [Running Tests](#running-tests)
+5. [Pre-commit Checks](#pre-commit-checks)
+6. [Alternative Installation Methods](#alternative-installation-methods)
+7. [Docker Usage](#docker-usage)
 
-## Displaying an Image
-If you want to display an image on the screen, uncomment `show()` method in demo.py. However, if you are running this code in a headless environment, this method will not work.
+## Overview
 
-## Install a package directly from the repository
-To install this package from GitHub, you can use the following command: pip3 install git+https://github.com/neophoca/103_EfficientDet_lite_demo.git
+This demo utilizes the TensorFlow Lite version of EfficientDet to perform object detection on images.
+
+## Setup and Installation
+
+Clone this repository:
+
+```bash
+git clone --branch week3 https://github.com/neophoca/103_EfficientDet_lite_demo.git
+```
+
+Install the `build` package and create a wheel file:
+
+```bash
+python -m pip install build
+python3 -m build .
+pip install dist/efficientdet-0.1.0-py3-none-any.whl
+```
+
+Activate the demo by running:
+
+```bash
+demo
+```
+
+## Running the Demo
+
+Create and activate a virtual environment.
+
+Install the requirements and run the `demo.py` script:
+
+```bash
+python demo/demo.py
+```
+
+This command will execute the `demo.py` script with a sample image and save the result image to the same directory.
+
+## Running Tests
+
+To run the unit tests, execute the following command:
+
+```bash
+pytest .
+```
+
+## Pre-commit Checks
+
+To run pre-commit checks, first install `pre-commit`:
+
+```bash
+pip install pre-commit
+```
+
+Then, run the following command:
+
+```bash
+pre-commit run --all-files
+```
+
+## Alternative Installation Methods
+
+To install the package directly from the GitHub repository:
+
+```bash
+pip install git+https://github.com/neo/103_EfficientDet_lite_demo.git
+```
+
+To start the demo, use the command `demo`.
+
+## Docker Usage
+
+To build the Docker image:
+
+```bash
+docker build -t object-detection-demo .
+```
+
+
+The object detection model is integrated with Streamlit and can be accessed at `localhost:` in your web browser.

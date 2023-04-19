@@ -3,6 +3,7 @@ README.md
 requirements.txt
 setup.py
 demo/__init__.py
+demo/app.py
 demo/demo.py
 demo/dog.jpg
 demo.egg-info/PKG-INFO
@@ -14,9 +15,5 @@ demo.egg-info/top_level.txt
 demo/models/__init__.py
 demo/models/model.py
 demo/models/model_float32.5
-demo/models/model_float32.tflite1
-demo/models/model_float32.tflite2
-demo/models/model_float32.tflite3
-demo/models/model_float32.tflite4
 tests/__init__.py
 tests/regression_test.py

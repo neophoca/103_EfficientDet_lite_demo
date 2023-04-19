@@ -5,9 +5,9 @@ import unittest
 
 import numpy as np
 
-sys.path.append("../demo")
-from demo.demo import get_image
-from demo.models.model import inference
+sys.path.append("../efficientdet")
+from efficientdet.demo import get_image
+from efficientdet.models.model import inference
 
 
 class TestEfficientDet(unittest.TestCase):

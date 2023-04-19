@@ -1,0 +1,2 @@
+[console_scripts]
+efficientdet = efficientdet.demo:main
