@@ -14,7 +14,7 @@ import numpy as np
 import pkg_resources
 import streamlit as st
 from models.model import LABELS, get_size, inference
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 
 
 def main():
@@ -28,20 +28,35 @@ def main():
     if uploaded_file is not None:
         img = Image.open(uploaded_file)
         size = get_size()
+        original_width, original_height = img.size
         bboxes, class_ids, confs = inference(img)
+
+        width_scale = original_width
+        height_scale = original_height
+        font_size = 30 
+        font = ImageFont.truetype("arial.ttf", font_size)
+
         draw = ImageDraw.Draw(img)
         for i, box in enumerate(bboxes[0]):
+            box = [
+                box[0] * height_scale,
+                box[1] * width_scale,
+                box[2] * height_scale,
+                box[3] * width_scale,
+            ]
+            print(box)
             draw.rectangle(
-                [(box[1] * size, box[0] * size), (box[3] * size, box[2] * size)],
+                [(box[1], box[0]), (box[3], box[2])],
                 outline=(0, 255, 0),
-                width=2,
+                width=3,
             )
-            label = LABELS[int(np.squeeze(class_ids)[i]) + 1]
+            label = LABELS[int(np.squeeze(class_ids)[i])]
             text_bbox = draw.textbbox((0, 0), label)
             text_width = text_bbox[2] - text_bbox[0]
             text_height = text_bbox[3] - text_bbox[1]
-            draw.text((box[1] * size, box[0] * size - text_height), label)
+            draw.text((box[1], box[0] - text_height), label, font=font)
         st.image(np.array(img), caption="Result", use_column_width=True)
+
 
 
 def get_image(file_path="dog.jpg"):
