@@ -89,6 +89,9 @@ To build the Docker image:
 ```bash
 docker build -t object-detection-demo .
 ```
+The object detection model is integrated with Streamlit and can be accessed at `localhost:8000` in your web browser.
 
+```bash
+docker run -p 8000:8000 object-detection-demo
+```
 
-The object detection model is integrated with Streamlit and can be accessed at `localhost:` in your web browser.
