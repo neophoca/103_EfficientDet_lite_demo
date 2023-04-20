@@ -21,7 +21,7 @@ This demo utilizes the TensorFlow Lite version of EfficientDet to perform object
 Clone this repository:
 
 ```bash
-git clone --branch week3 https://github.com/neophoca/103_EfficientDet_lite_demo.git
+git clone https://github.com/neophoca/103_EfficientDet_lite_demo.git
 ```
 
 Install the `build` package and create a wheel file:
