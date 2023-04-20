@@ -2,9 +2,9 @@ name: CI
 
 on:
   pull_request:
-    branches: [main, main2]
+    branches: [main]
   push:
-    branches: [main2, master]
+    branches: [main, master]
 
 jobs:
   build:
@@ -47,5 +47,8 @@ jobs:
 
       - name: Test with Docker
         run: |
-          docker run --rm demotest
+          docker run --rm --name demotest_ demotest &
+          sleep 10
+          docker logs demotest_
+          docker stop demotest_
         working-directory: .
