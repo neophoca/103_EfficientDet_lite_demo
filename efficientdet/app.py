@@ -44,17 +44,17 @@ def main():
                 box[2] * height_scale,
                 box[3] * width_scale,
             ]
-            print(box)
             draw.rectangle(
                 [(box[1], box[0]), (box[3], box[2])],
                 outline=(0, 255, 0),
                 width=3,
             )
-            label = LABELS[int(np.squeeze(class_ids)[i])]
-            text_bbox = draw.textbbox((0, 0), label)
-            text_width = text_bbox[2] - text_bbox[0]
-            text_height = text_bbox[3] - text_bbox[1]
-            draw.text((box[1], box[0] - text_height), label, font=font)
+            if int(np.squeeze(class_ids)[i]) < 80:
+                label = LABELS[int(np.squeeze(class_ids)[i])]
+                text_bbox = draw.textbbox((0, 0), label)
+                text_width = text_bbox[2] - text_bbox[0]
+                text_height = text_bbox[3] - text_bbox[1]
+                draw.text((box[1], box[0] - text_height), label, font=font)
         st.image(np.array(img), caption="Result", use_column_width=True)
 
 
