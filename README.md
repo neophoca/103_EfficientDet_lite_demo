@@ -35,7 +35,7 @@ pip install dist/efficientdet-0.1.0-py3-none-any.whl
 Activate the demo by running:
 
 ```bash
-demo
+efficientdet
 ```
 
 ## Running the Demo
@@ -45,7 +45,7 @@ Create and activate a virtual environment.
 Install the requirements and run the `demo.py` script:
 
 ```bash
-python demo/demo.py
+python efficientdet/demo.py
 ```
 
 This command will execute the `demo.py` script with a sample image and save the result image to the same directory.
@@ -77,10 +77,10 @@ pre-commit run --all-files
 To install the package directly from the GitHub repository:
 
 ```bash
-pip install git+https://github.com/neo/103_EfficientDet_lite_demo.git
+pip install git+https://github.com/neophoca/103_EfficientDet_lite_demo.git
 ```
 
-To start the demo, use the command `demo`.
+To start the demo, use the command `efficientdet`.
 
 ## Docker Usage
 
