@@ -33,7 +33,7 @@ def main():
 
         width_scale = original_width
         height_scale = original_height
-        font_size = 30 
+        font_size = 30
         font = ImageFont.truetype("arial.ttf", font_size)
 
         draw = ImageDraw.Draw(img)
@@ -56,7 +56,6 @@ def main():
             text_height = text_bbox[3] - text_bbox[1]
             draw.text((box[1], box[0] - text_height), label, font=font)
         st.image(np.array(img), caption="Result", use_column_width=True)
-
 
 
 def get_image(file_path="dog.jpg"):
