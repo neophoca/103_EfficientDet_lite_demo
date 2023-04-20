@@ -94,3 +94,5 @@ The object detection model is integrated with Streamlit and can be accessed at `
 ```bash
 docker run -p 8000:8000 object-detection-demo
 ```
+
+[![CI](https://github.com/neophoca/103_EfficientDet_lite_demo/actions/workflows/ci.yml/badge.svg)](https://github.com/neophoca/103_EfficientDet_lite_demo/actions/workflows/ci.yml)
