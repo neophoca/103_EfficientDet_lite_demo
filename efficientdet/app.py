@@ -34,7 +34,7 @@ def main():
         width_scale = original_width
         height_scale = original_height
         font_size = 30
-        font = ImageFont.truetype("arial.ttf", font_size)
+        font = ImageFont.load_default()
 
         draw = ImageDraw.Draw(img)
         for i, box in enumerate(bboxes[0]):
